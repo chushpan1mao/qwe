@@ -1,0 +1,582 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>итоговая работа</title>
+<style>
+
+main{
+width:50%;
+margin-left:25%;
+float:left;
+width:75%;
+}
+
+header {
+position:sticky;
+top:0px;
+height:100px;
+background: url(https://i.pinimg.com/originals/72/11/ad/7211adae2740ff2c691cbb62aad261f0.jpg)no-repeat 5% 50%;
+
+ background-size: cover;
+ z-index: +1;
+}
+nav{
+width:25%;
+position:sticky;
+top:100px;
+float:left;
+margin-left:-100%;
+}
+
+#nav1{
+width:25%;
+position:sticky;
+top:100px;
+float:left;
+margin-left:-25%;
+background-color: purple;
+}
+
+#nav2{
+
+width:25%;
+position:sticky;
+top:100px;
+float:left;
+margin-left:-100%;
+background-color: grey;
+}
+
+footer{
+clear:left;
+background-color: brown;
+}
+#content{
+margin-right: 34%;
+margin-top: 0px;
+padding: 16px;
+font-size: 20px;
+font-family: OCR A Std, monospace;
+}
+* {box-sizing: border-box; margin: 0;}
+.widget {
+  padding: 20px 30px;
+  background: grey;
+  font-family: 'Roboto', sans-serif;
+}
+.widget-title {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #222;
+  font-size: 16px;
+  padding-left: 15px;
+  margin-bottom: 15px;
+  border-left: 2px solid #b99d61;
+}
+.widget-list {
+  padding: 0;
+  list-style: none;
+}
+.widget-list a:before {
+  content: "\2014";
+  margin-right: 14px;
+}
+.widget-list a {
+  text-decoration: none;
+  outline: none;
+  display: block;
+  padding: 6px 0; 
+  letter-spacing: 1px;
+  font-weight: 300;
+  color: #444;
+  transition: .3s linear;
+}
+.widget-list a:hover {color: #b99d61;}
+.slideshow {
+    width: 100%;
+    height: 550px;
+    position: relative;
+    overflow: hidden;
+    background: #000;
+    margin: 20px 0;
+}
+.slideshow-item {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+    animation: slideanim 40s infinite;
+    pointer-events: none;
+}
+.slideshow-item:nth-child(1),
+.slideshow-item:nth-child(1) img {
+    animation-delay: 0;
+}
+.slideshow-item:nth-child(2),
+.slideshow-item:nth-child(2) img {
+    animation-delay: 10s;
+}
+.slideshow-item:nth-child(3),
+.slideshow-item:nth-child(3) img {
+    animation-delay: 20s;
+}
+.slideshow-item:nth-child(4),
+.slideshow-item:nth-child(4) img {
+    animation-delay: 30s;
+}
+.slideshow-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: zoom 40s infinite;
+}
+.slideshow-item-text {
+    max-width: 50%;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(0,0,0,0.7);
+    color: #fff;
+    padding: 20px 30px;
+    font-family: Verdana, sans-serif;   
+}
+.slideshow-item-text h5 {
+    font-size: 20px;
+    margin: 0 0 10px 0;
+    color: #BFE2FF;
+}
+.slideshow-item-text p {
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+@keyframes slideanim {
+    12.5%{
+        opacity: 1;
+        pointer-events: auto;
+    }
+    25%{
+        opacity: 1;
+        pointer-events: auto;
+    }    
+    37.5%{
+        opacity: 0;
+    }
+}
+@keyframes zoom {
+    50%{
+        transform: scale(1.3);
+    }    
+}
+@media screen and (max-width: 1100px){
+    .slideshow-item-text{
+        max-width: 75%;
+    }
+}
+@media screen and (max-width: 456px){
+    .slideshow-item-text {
+        bottom: 0;
+        left: 0;
+        max-width: 100%;
+    }
+    .slideshow-item-text h5 {
+        font-size: 18px;
+    }
+    .slideshow-item-text p {
+        font-size: 13px;
+    }
+}
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+.footer-section {
+  background: #151414;
+  position: relative;
+}
+.footer-cta {
+  border-bottom: 1px solid #373636;
+}
+.single-cta i {
+  color: #ff5e14;
+  font-size: 30px;
+  float: left;
+  margin-top: 8px;
+}
+.cta-text {
+  padding-left: 15px;
+  display: inline-block;
+}
+.cta-text h4 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+.cta-text span {
+  color: #757575;
+  font-size: 15px;
+}
+.footer-content {
+  position: relative;
+  z-index: 2;
+}
+.footer-pattern img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 330px;
+  background-size: cover;
+  background-position: 100% 100%;
+}
+.footer-logo {
+  margin-bottom: 30px;
+}
+.footer-logo img {
+    max-width: 200px;
+}
+.footer-text p {
+  margin-bottom: 14px;
+  font-size: 14px;
+      color: #7e7e7e;
+  line-height: 28px;
+}
+.footer-social-icon span {
+  color: #fff;
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 20px;
+}
+.footer-social-icon a {
+  color: #fff;
+  font-size: 16px;
+  margin-right: 15px;
+}
+.footer-social-icon i {
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  line-height: 38px;
+  border-radius: 50%;
+}
+.facebook-bg{
+  background: #3B5998;
+}
+.twitter-bg{
+  background: #55ACEE;
+}
+.google-bg{
+  background: #DD4B39;
+}
+.footer-widget-heading h3 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  position: relative;
+}
+.footer-widget-heading h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -15px;
+  height: 2px;
+  width: 50px;
+  background: #ff5e14;
+}
+.footer-widget ul li {
+  display: inline-block;
+  float: left;
+  width: 50%;
+  margin-bottom: 12px;
+}
+.footer-widget ul li a:hover{
+  color: #ff5e14;
+}
+.footer-widget ul li a {
+  color: #878787;
+  text-transform: capitalize;
+}
+.subscribe-form {
+  position: relative;
+  overflow: hidden;
+}
+.subscribe-form input {
+  width: 100%;
+  padding: 14px 28px;
+  background: #2E2E2E;
+  border: 1px solid #2E2E2E;
+  color: #fff;
+}
+.subscribe-form button {
+    position: absolute;
+    right: 0;
+    background: #ff5e14;
+    padding: 13px 20px;
+    border: 1px solid #ff5e14;
+    top: 0;
+}
+.subscribe-form button i {
+  color: #fff;
+  font-size: 22px;
+  transform: rotate(-6deg);
+}
+.copyright-area{
+  background: #202020;
+  padding: 25px 0;
+}
+.copyright-text p {
+  margin: 0;
+  font-size: 14px;
+  color: #878787;
+}
+.copyright-text p a{
+  color: #ff5e14;
+}
+.footer-menu li {
+  display: inline-block;
+  margin-left: 20px;
+}
+.footer-menu li:hover a{
+  color: #ff5e14;
+}
+.footer-menu li a {
+  font-size: 14px;
+  color: #878787;
+}
+</style>
+
+</head>
+
+<body bgcolor="grey">
+  <header>
+<p style="color: grey; position: absolute; right: 1200px; top: 20px; font-size: 64px; font-family: Bradley Hand, cursive;">Computers</p>
+<p style="color: grey;position: absolute;right: 470px;top: 20px; font-size: 64px; font-family:Bradley Hand, cursive;">Futures</p>
+ 
+</header>
+
+<div id="container">
+<main>
+<div id="content">
+<p>Сказать, что компьютеры развиваются невероятно быстро — ничего не сказать. Еще в 1965 году Гордон Мур отметил, что число транзисторов, которые можно вместить на кремниевый чип, каждый год увеличивается вдвое. Эти маниакальные темпы немного замедлились — теперь удвоение происходит примерно раз в два года.</p>
+<img style="width: 350px; height:200px; border-radius:15px; margin-right:6px;" src="https://www.notebookcheck-ru.com/fileadmin/Notebooks/News/_nc3/A53F2AB7_4D30_4CB2_A210_66DEF6C9C4BB.jpeg" align="left" >
+<p>Осведомленность о головокружительной скорости, с которой развиваются компьютерные технологии, просочилась в общественное сознание. Кто еще не слышал шутку о том, что если купить компьютер в магазине, он устареет к тому времени, как вы его довезете домой? Что будет с компьютерами в будущем?
+
+Если предположить, что производство микропроцессоров будет жить по закону Мура, вычислительная мощность наших компьютеров должна удваиваться каждые два года. Получается, через 100 лет компьютеры будут в 1 125 899 906 842 624 раза мощнее, чем сегодня. Это трудно вообразить.
+
+Но даже сам Гордон Мур предостерегал от того, что закон Мура продержится так долго. В 2005 году инженер сказал, что транзисторы достигнут атомарных масштабов, и мы столкнемся с фундаментальными барьерами, которые не сможем пересечь. Потом мы не сможем вместить больше транзисторов в точку пространства.
+Возможно, мы сможем обойти этот барьер за счет строительства более крупных процессорных чипов. Но транзисторы генерируют тепло, а горячие процессоры приводят к тому, что компьютер отключается. Компьютерам с быстрыми процессорами нужны эффективные системы охлаждения, чтобы избежать перегрева. Чем больше процессорный чип, тем больше тепла компьютер будет вырабатывать при работе на полной скорости.
+
+Другая тактика — перейти к многоядерной архитектуре. Многоядерный процессор распределяет свою вычислительную мощь на каждое из ядер. Они хорошо справляются с задачами, которые можно разбить на меньшие компоненты, но плохо справляются с обработкой крупных вычислительных задач, которые разбить нельзя.
+
+Компьютеры будущего, возможно, будут опираться совершенно на иную модель, нежели традиционные машины. Что если мы откажемся от старых процессоров на базе транзисторов?
+</p>
+</div>
+</p>
+
+
+</main>
+<nav id="nav1">
+
+<div class="widget">
+  <h3 class="widget-title">News</h3>
+
+  <ul class="widget-list">
+    <li><a href="">ИИ</a></li>
+    <li><a href="">SpaceX</a></li>
+    <li><a href="">NASA</a></li>
+    <li><a href="">Роботехника</a></li>
+    <li><a href="">Компьютер</a></li>
+  </ul>
+  <div class="slideshow">
+    <div class="slideshow-item">
+        <img src="https://alev.biz/wp-content/uploads/2017/12/GEC_illustration.jpg" alt="">
+        <div class="slideshow-item-text">
+            <h5>Молекулярные компьютеры</h5>
+            <p>Недавно компания Hewlett-Packard объявила о первых успехах в изготовлении компонентов, из которых могут быть построены мощные молекулярные компьютеры. </p>
+        </div>
+    </div>
+    <div class="slideshow-item">
+        <img src="https://www.totalgeekdom.com/wp-content/uploads/2012/05/Grass-2.jpg" alt="">
+        <div class="slideshow-item-text">
+            <h5>Биокомпьютеры</h5>
+            <p>Применение в вычислительной технике биологических материалов позволит со временем уменьшить компьютеры до размеров живой клетки. </p>
+        </div>
+    </div>
+    <div class="slideshow-item">
+        <img src="https://fb.ru/misc/i/gallery/102340/3030836.jpg" alt="">
+        <div class="slideshow-item-text">
+            <h5>Оптические компьютеры</h5>
+            <p>По сравнению с тем, что обещают молекулярные или биологические компьютеры, оптические ПК могут показаться не очень впечатляющими. </p>
+        </div>
+    </div>
+    <div class="slideshow-item">
+        <img src="https://ab-news.ru/wp-content/uploads/2020/08/googleconduc.jpg" alt="">
+        <div class="slideshow-item-text">
+            <h5>Квантовые компьютеры</h5>
+            <p>Квантовый компьютер будет состоять из компонентов субатомного размера и работать по принципам квантовой механики. </p>            
+        </div>
+    </div>
+</div>
+</div>
+</nav>
+
+<nav id="nav2">
+
+<div class="slideshow">
+    <div class="slideshow-item">
+        <img src="https://klubmama.ru/uploads/posts/2022-08/1661361159_16-klubmama-ru-p-kompyuter-budushchego-podelka-foto-18.jpg" alt="">
+        <div class="slideshow-item-text">
+            <h5>Будни фотоники</h5>
+            <p>Одна из возможных альтернатив элементной базы для компьютеров — применение лазеров для передачи и обработки информации. В связи с этим внимание специалистов всё сильнее привлекает фотоника — аналог электроники, где вместо электронов используются фотоны, излучаемые лазерами.</p>
+        </div>
+    </div>
+    <div class="slideshow-item">
+        <img src="https://www.csr.ru/upload/iblock/bc7/bc7595365a813ddc1bdc64d97ce7c96e.jpg" alt="">
+        <div class="slideshow-item-text">
+            <h5>Мозговой процессор</h5>
+            <p>Возможно, предложенный прогноз слишком оптимистичен и воцарение мозго-сетей будет выглядеть как-то по-другому. Однако не приходится сомневаться: симбиоз человека с компьютером становится всё теснее, и когда-нибудь количество перейдёт в качество, породив принципиально новый вид обработки информации.</p>
+        </div>
+    </div>
+    <div class="slideshow-item">
+        <img src="https://thumbs.dreamstime.com/b/%D0%B2%D0%B5%D0%B1-%D1%85%D0%BE%D1%81%D1%82%D0%B8%D0%BD%D0%B3-%D0%B4%D0%B5%D1%8F%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D1%8C-%D0%BF%D0%BE-%D0%BF%D1%80%D0%B5%D0%B4%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8E-%D0%BF%D1%80%D0%BE%D1%81%D1%82%D1%80%D0%B0%D0%BD%D1%81%D1%82%D0%B2%D0%B0-%D0%B4%D0%BB%D1%8F-%D1%85%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F-246276596.jpg" alt="">
+        <div class="slideshow-item-text">
+            <h5>Троичный компьютер</h5>
+            <p>Все современные компьютеры построены на двоичной логике — формальной системе, основанной на двух противоположных утверждениях: истина («логическая 1») и ложь («логический 0»).  </p>
+        </div>
+    </div>
+    <div class="slideshow-item">
+        <img src="https://thumbs.dreamstime.com/b/%D0%B1%D1%83%D0%B4%D1%83%D1%89%D0%B8%D0%B5-%D1%80%D0%BE%D0%B1%D0%BE%D1%82-%D0%B8-%D0%BA%D0%B8%D0%B1%D0%BE%D1%80%D0%B3-%D0%B8%D1%81%D0%BA%D1%83%D1%81%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-%D0%B8%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D0%B0-d-%D0%BF%D1%80%D0%B5%D0%B4%D1%81%D1%82%D0%B0%D0%B2%D0%BB%D1%8F%D1%8E%D1%89%D0%B8%D1%85-182425864.jpg" alt="">
+        <div class="slideshow-item-text">
+            <h5>Квантовый прорыв</h5>
+            <p>Перспективы фотоники и мозго-сетей впечатляют, однако куда большего специалисты ждут от внедрения квантового компьютера. Его концепция появилась примерно в то же самое время, когда учёные начали разбираться в законах, по которым «живёт» квантовый мир. Концепцию выдвинул в 1980 году советский математик Юрий Манин; через несколько месяцев американский физик Ричард Фейнман описал теоретическую модель, а его коллега Пол Бениофф придумал принципы построения необычной вычислительной машины.</p>            
+        </div>
+    </div>
+</div>
+</nav>
+
+</div>
+
+<footer class="footer-section">
+        <div class="container">
+            <div class="footer-cta pt-5 pb-5">
+                <div class="row">
+                    <div class="col-xl-4 col-md-4 mb-30">
+                        <div class="single-cta">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="cta-text">
+                                <h4>Find us</h4>
+                                <span>1010 Avenue, sw 54321, chandigarh</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-4 mb-30">
+                        <div class="single-cta">
+                            <i class="fas fa-phone"></i>
+                            <div class="cta-text">
+                                <h4>Call us</h4>
+                                <span>9876543210 0</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-4 mb-30">
+                        <div class="single-cta">
+                            <i class="far fa-envelope-open"></i>
+                            <div class="cta-text">
+                                <h4>Mail us</h4>
+                                <span>mail@info.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-content pt-5 pb-5">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 mb-50">
+                        <div class="footer-widget">
+                            <div class="footer-logo">
+                                <a href="index.html"><img src="https://i.ibb.co/QDy827D/ak-logo.png" class="img-fluid" alt="logo"></a>
+                            </div>
+                            <div class="footer-text">
+                                <p>Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed do eiusmod tempor incididuntut consec tetur adipisicing
+                                elit,Lorem ipsum dolor sit amet.</p>
+                            </div>
+                            <div class="footer-social-icon">
+                                <span>Follow us</span>
+                                <a href="#"><i class="fab fa-facebook-f facebook-bg"></i></a>
+                                <a href="#"><i class="fab fa-twitter twitter-bg"></i></a>
+                                <a href="#"><i class="fab fa-google-plus-g google-bg"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
+                        <div class="footer-widget">
+                            <div class="footer-widget-heading">
+                                <h3>Useful Links</h3>
+                            </div>
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">about</a></li>
+                                <li><a href="#">services</a></li>
+                                <li><a href="#">portfolio</a></li>
+                                <li><a href="#">Contact</a></li>
+                                <li><a href="#">About us</a></li>
+                                <li><a href="#">Our Services</a></li>
+                                <li><a href="#">Expert Team</a></li>
+                                <li><a href="#">Contact us</a></li>
+                                <li><a href="#">Latest News</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
+                        <div class="footer-widget">
+                            <div class="footer-widget-heading">
+                                <h3>Subscribe</h3>
+                            </div>
+                            <div class="footer-text mb-25">
+                                <p>Don’t miss to subscribe to our new feeds, kindly fill the form below.</p>
+                            </div>
+                            <div class="subscribe-form">
+                                <form action="#">
+                                    <input type="text" placeholder="Email Address">
+                                    <button><i class="fab fa-telegram-plane"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 text-center text-lg-left">
+                        <div class="copyright-text">
+                            <p>Copyright &copy; 2018, All Right Reserved <a href="https://codepen.io/anupkumar92/">Anup</a></p>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+                        <div class="footer-menu">
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Terms</a></li>
+                                <li><a href="#">Privacy</a></li>
+                                <li><a href="#">Policy</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
+
+
+
